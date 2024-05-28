@@ -5,8 +5,8 @@ class Animacion:
     def __init__(self):
         datos = pd.read_csv('C:/Users/carol/OneDrive/Documentos/datos.data', header=0)
         df = pd.DataFrame(datos)
-        self.valorx = df.loc[1, 'x']  # Cambiar a la posición 1
-        self.valory = df.loc[1, 'y']  # Cambiar a la posición 1
+        self.valorx = df.loc[0, 'x']  # Cambiar a la posición 1
+        self.valory = df.loc[0, 'y']  # Cambiar a la posición 1
         self.longitud_del_lado = self.valory  # Longitud del lado del cubo igual a valory
 
     def __figuras__(self):
@@ -23,13 +23,30 @@ class Animacion:
         vertice_inferior_derecho_trasero = (self.valorx + self.longitud_del_lado + desplazamiento, self.valory + self.longitud_del_lado - desplazamiento)
 
         # Calcular el tamaño del lienzo
-        canvas_width = self.valorx + self.longitud_del_lado + desplazamiento + 20  # Añadir un espacio adicional de 20 píxeles
-        canvas_height = self.valory + self.longitud_del_lado + desplazamiento + 20  # Añadir un espacio adicional de 20 píxeles
+        max_x = max(self.valorx + self.longitud_del_lado, vertice_superior_derecho_trasero[0])
+        max_y = max(self.valory + self.longitud_del_lado, vertice_inferior_izquierdo_trasero[1])
+        min_x = min(self.valorx, vertice_superior_izquierdo_trasero[0])
+        min_y = min(self.valory, vertice_superior_izquierdo_trasero[1])
+
+        canvas_width = max_x - min_x + 20  # Añadir un espacio adicional de 20 píxeles
+        canvas_height = max_y - min_y + 20  # Añadir un espacio adicional de 20 píxeles
 
         # Crear la ventana y el lienzo con el tamaño calculado
         root = tk.Tk()
         canvas = tk.Canvas(root, width=canvas_width, height=canvas_height)
         canvas.pack()
+
+        # Desplazar todos los vértices para que se vean dentro del lienzo
+        desplazamiento_x = -min_x + 10  # Desplazar para evitar valores negativos y añadir un margen
+        desplazamiento_y = -min_y + 10  # Desplazar para evitar valores negativos y añadir un margen
+        vertice_superior_izquierdo_frontal = (vertice_superior_izquierdo_frontal[0] + desplazamiento_x, vertice_superior_izquierdo_frontal[1] + desplazamiento_y)
+        vertice_superior_derecho_frontal = (vertice_superior_derecho_frontal[0] + desplazamiento_x, vertice_superior_derecho_frontal[1] + desplazamiento_y)
+        vertice_inferior_izquierdo_frontal = (vertice_inferior_izquierdo_frontal[0] + desplazamiento_x, vertice_inferior_izquierdo_frontal[1] + desplazamiento_y)
+        vertice_inferior_derecho_frontal = (vertice_inferior_derecho_frontal[0] + desplazamiento_x, vertice_inferior_derecho_frontal[1] + desplazamiento_y)
+        vertice_superior_izquierdo_trasero = (vertice_superior_izquierdo_trasero[0] + desplazamiento_x, vertice_superior_izquierdo_trasero[1] + desplazamiento_y)
+        vertice_superior_derecho_trasero = (vertice_superior_derecho_trasero[0] + desplazamiento_x, vertice_superior_derecho_trasero[1] + desplazamiento_y)
+        vertice_inferior_izquierdo_trasero = (vertice_inferior_izquierdo_trasero[0] + desplazamiento_x, vertice_inferior_izquierdo_trasero[1] + desplazamiento_y)
+        vertice_inferior_derecho_trasero = (vertice_inferior_derecho_trasero[0] + desplazamiento_x, vertice_inferior_derecho_trasero[1] + desplazamiento_y)
 
         # Dibujar las líneas del cubo
         self.lineas = []
