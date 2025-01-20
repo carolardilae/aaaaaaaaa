@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programación aplicada</title>
+</head>
+<center>
+<h1 style="font-size: 95px"><font color="black">Programación aplicada</font></h1></center>
+<body style="background-color: rgb(252, 209, 216); background-image: url('https://marketplace.canva.com/EAFZ_1xejoA/1/0/900w/canva-pink-cute-valentines-day-phone-wallpaper-Dvr70XDLzHY.jpg'); background-size: cover; background-position: center;">
+    <h2>Introducción</h2>
+    <p>Python es un lenguaje de programación ampliamente utilizado en las aplicaciones web, el desarrollo de software, la ciencia de datos y el machine learning (ML). Los desarrolladores utilizan Python porque es eficiente y fácil de aprender, además de que se puede ejecutar en muchas plataformas diferentes. El software Python se puede descargar gratis, se integra bien a todos los tipos de sistemas y aumenta la velocidad del desarrollo.</p>
+    <a href="https://aws.amazon.com/es/what-is/python/">referencia</a>
+
+    <p><img src="https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=1920%2C1920&ssl=1" height="200px" width="300px"></p>
+    <p style="font-size: 15px;">A continuación los codigos en github, presione el boton github que lo redireccionara a los trabajos de github:</p>
+    <menu>
+        <li><button style="font-size: 20px; background-color:pink; border-color:plum; color:black;" onclick="location.href='https://github.com/carolardilae/PA/tree/main/pa'">GitHub</button></li>
+        <li><button style="font-size: 20px; background-color:pink; border-color:plum; color:black;" onclick="location.href='https://github.com/carolardilae/PA/tree/main/pa'">Google colaboratory</button></li>
+    </menu>
+
+    
+    
+</body>
+</html>
